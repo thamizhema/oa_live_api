@@ -19,6 +19,10 @@ app.post("/jd", async (req, res) => {
     });
 });
 
+app.get("/", (req, res) => {
+  res.send("get mathod is working");
+});
+
 // Run Port
 app.listen(4000, () => {
   console.log("App running at 4000 port");
