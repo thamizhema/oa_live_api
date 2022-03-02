@@ -1,4 +1,5 @@
 const express = require("express");
+const functions = require("firebase-functions");
 const cors = require("cors");
 const axios = require("axios");
 const jdoodle = require("jdoodle-api");
@@ -23,6 +24,7 @@ app.get("/", (req, res) => {
   res.send("get mathod is working");
 });
 
+exports.app = functions.https.onRequest(app);
 // Run Port
 app.listen(4000, () => {
   console.log("App running at 4000 port");
